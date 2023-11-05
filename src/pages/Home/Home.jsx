@@ -1,17 +1,19 @@
 import { Helmet } from "react-helmet";
+import { Outlet } from "react-router-dom";
 
 
-const Login = () => {
+const Home = () => {
     return (
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Login</title>
+                <title>My Title</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-            <h1>This is Login</h1>
+            <h1>This is Home</h1>
+            <Outlet/>
         </div>
     );
 };
 
-export default Login;
+export default Home;

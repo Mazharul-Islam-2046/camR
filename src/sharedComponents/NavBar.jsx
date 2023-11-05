@@ -1,8 +1,22 @@
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
         <div>
-            <h1>This is navbar</h1>            
+            {/* NavContainer */}
+            <div>
+                {/* Logo and Menu Container */}
+                <div className="flex">
+                    <div>
+                        <img src="../assets/logo.png" alt="" />
+                    </div>
+                    {/* Menus */}
+                    <div>
+                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/services">Services</NavLink>
+                    </div>
+                </div>
+            </div>            
         </div>
     );
 };

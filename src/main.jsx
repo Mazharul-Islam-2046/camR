@@ -6,10 +6,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import AllAboveAll from './pages/AllAboveAll';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Error from './pages/Error';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AllServices from './pages/AllServices';
 
 
 const router = createBrowserRouter([
@@ -33,8 +34,12 @@ const router = createBrowserRouter([
         element:<Login/>,
       },
       {
-        path: "/registration",
+        path: "/register",
         element: <Register/>
+      },
+      {
+        path: "/services",
+        element: <AllServices/>
       }
     ]
   },
