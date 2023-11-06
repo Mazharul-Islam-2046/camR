@@ -121,6 +121,22 @@ const BasePage = () => {
             </div>
 
 
+
+            {/* All Products Section */}
+
+            <div className="mt-44 px-16 flex flex-col items-center">
+                <h3 className="text-3xl font-bold mb-10 text-center font-secondary">All Products</h3>
+                <div className="grid grid-cols-3 gap-4 gap-y-20">
+                    {
+                        products.slice(0, 8).map((product, idx) => <PopularProductCard key={idx} product={product}></PopularProductCard>)
+                    }
+                </div>
+                <button className="mt-20 py-2 px-5 border-2 border-black w-1/6 hover:bg-black hover:text-white">
+                    <NavLink to="/allProducts">See All Products</NavLink>
+                </button>
+            </div>
+
+
         </>
     );
 };
