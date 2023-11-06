@@ -82,10 +82,13 @@ const BasePage = () => {
 
 
             {/* Browse By Category */}
-            <div className="px-16 mt-32">
+            <div className="px-16 mt-44">
                 <h3 className="text-4xl font-bold font-secondary">
-                    Browse By Category
+                    Newly Added Products
                 </h3>
+                <p className="font-medium font-primary mt-2 mb-10">
+                    This Products Has been Newly Added
+                </p>
 
 
 
@@ -93,7 +96,7 @@ const BasePage = () => {
                 <div>
                     <Swiper
                         spaceBetween={50}
-                        slidesPerView={5.5}
+                        slidesPerView={4.5}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
                     >
@@ -107,7 +110,7 @@ const BasePage = () => {
 
             {/* Propular Product Section */}
 
-            <div className="pt-16 mt-32 px-16">
+            <div className=" mt-44 px-16">
                 <h2 className="text-4xl font-bold font-secondary">Popular Products</h2>
                 <p className="font-medium font-primary mt-2 mb-10">This are the most hot products of this week!!</p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-16">
