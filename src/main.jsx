@@ -11,6 +11,8 @@ import Error from './pages/Error';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AllServices from './pages/AllServices';
+import BasePage from './pages/Home/HomeChildrenPages/BasePage';
+import CameraPage from './pages/Home/HomeChildrenPages/CameraPage';
 
 
 const router = createBrowserRouter([
@@ -25,7 +27,16 @@ const router = createBrowserRouter([
         children:[
           {
             path: "/",
-            element: <h1>Home Child</h1>
+            element: <BasePage/>,
+            loader: () => fetch('productData.json')
+          },
+          {
+            path: "/camera",
+            element: <CameraPage/>
+          },
+          {
+            path: "/add",
+            element: <h1>Add Page</h1>
           }
         ]
       },

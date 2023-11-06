@@ -1,0 +1,40 @@
+{
+    "popular": [
+        {
+            "category": "camera",
+            "product_name": "Canon EOS 5D Mark IV",
+            "product_image": "image_url_1.jpg",
+            "provider_name": "Camera Pros",
+            "provider_image": "provider_image_url_1.jpg",
+            "price_per_day": 50.00,
+            "description": "The Canon EOS 5D Mark IV is a versatile and high-performance DSLR camera. Capture stunning photos and 4K video with this professional-grade camera."
+          },
+          {
+            "category": "camera accessories",
+            "product_name": "Manfrotto Tripod",
+            "product_image": "image_url_2.jpg",
+            "provider_name": "Photo Gear Rentals",
+            "provider_image": "provider_image_url_2.jpg",
+            "price_per_day": 10.00,
+            "description": "The Manfrotto Tripod is a reliable and sturdy accessory for your camera. It provides stable support for your photography and videography needs."
+          },
+          {
+            "category": "digital",
+            "product_name": "Sony A7 III Mirrorless Camera",
+            "product_image": "image_url_3.jpg",
+            "provider_name": "Digital World",
+            "provider_image": "provider_image_url_3.jpg",
+            "price_per_day": 40.00,
+            "description": "The Sony A7 III is a high-quality mirrorless camera known for its excellent image quality and 4K video recording capabilities."
+          },
+          {
+            "category": "camera accessories",
+            "product_name": "DJI Ronin-S Gimbal Stabilizer",
+            "product_image": "image_url_4.jpg",
+            "provider_name": "Gimbal Gear Co.",
+            "provider_image": "provider_image_url_4.jpg",
+            "price_per_day": 25.00,
+            "description": "The DJI Ronin-S is a professional-grade gimbal stabilizer that ensures smooth and stable shots for your camera."
+          }
+    ]
+}

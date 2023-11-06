@@ -9,10 +9,14 @@ const NavBar = () => {
     // Add an event listener to detect when the user scrolls
     const handleScroll = () => {
 
+      // get windows width
+      const windowWidth = window.innerWidth;
+      const height = windowWidth * (38/100)
+
       // Get the current scroll position
       const scrollPosition = window.scrollY;
       // Check if the scroll position is greater than or equal to the header height
-      if (scrollPosition > 0) {
+      if (scrollPosition >= height) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);

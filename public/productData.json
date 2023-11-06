@@ -1,0 +1,265 @@
+{
+    "products": [
+      {
+        "category": "camera",
+        "product_name": "Canon EOS 5D Mark IV",
+        "product_image": "image_url_1.jpg",
+        "provider_name": "Camera Pros",
+        "provider_image": "provider_image_url_1.jpg",
+        "price_per_day": 50.00,
+        "description": "The Canon EOS 5D Mark IV is a versatile and high-performance DSLR camera. Capture stunning photos and 4K video with this professional-grade camera."
+      },
+      {
+        "category": "camera accessories",
+        "product_name": "Manfrotto Tripod",
+        "product_image": "image_url_2.jpg",
+        "provider_name": "Photo Gear Rentals",
+        "provider_image": "provider_image_url_2.jpg",
+        "price_per_day": 10.00,
+        "description": "The Manfrotto Tripod is a reliable and sturdy accessory for your camera. It provides stable support for your photography and videography needs."
+      },
+      {
+        "category": "digital",
+        "product_name": "Sony A7 III Mirrorless Camera",
+        "product_image": "image_url_3.jpg",
+        "provider_name": "Digital World",
+        "provider_image": "provider_image_url_3.jpg",
+        "price_per_day": 40.00,
+        "description": "The Sony A7 III is a high-quality mirrorless camera known for its excellent image quality and 4K video recording capabilities."
+      },
+      {
+        "category": "camera accessories",
+        "product_name": "DJI Ronin-S Gimbal Stabilizer",
+        "product_image": "image_url_4.jpg",
+        "provider_name": "Gimbal Gear Co.",
+        "provider_image": "provider_image_url_4.jpg",
+        "price_per_day": 25.00,
+        "description": "The DJI Ronin-S is a professional-grade gimbal stabilizer that ensures smooth and stable shots for your camera."
+      },
+      {
+        "category": "digital",
+        "product_name": "Nikon D850 DSLR Camera",
+        "product_image": "image_url_5.jpg",
+        "provider_name": "Nikon Pro Shop",
+        "provider_image": "provider_image_url_5.jpg",
+        "price_per_day": 55.00,
+        "description": "The Nikon D850 DSLR camera offers exceptional image quality, speed, and versatility for photographers and videographers."
+      },
+      {
+        "category": "audio",
+        "product_name": "Audio-Technica AT2020 Microphone",
+        "product_image": "image_url_6.jpg",
+        "provider_name": "Audio Pro Gear",
+        "provider_image": "provider_image_url_6.jpg",
+        "price_per_day": 15.00,
+        "description": "The Audio-Technica AT2020 is a studio-quality microphone ideal for recording vocals and instruments."
+      },
+      {
+        "category": "lighting",
+        "product_name": "Godox SL-60W LED Video Light",
+        "product_image": "image_url_7.jpg",
+        "provider_name": "Lighting Solutions",
+        "provider_image": "provider_image_url_7.jpg",
+        "price_per_day": 20.00,
+        "description": "The Godox SL-60W LED light is perfect for video and photography, offering adjustable brightness and color temperature."
+      },
+      {
+        "category": "grips",
+        "product_name": "Manfrotto Super Clamp",
+        "product_image": "image_url_8.jpg",
+        "provider_name": "Grip It Right",
+        "provider_image": "provider_image_url_8.jpg",
+        "price_per_day": 8.00,
+        "description": "The Manfrotto Super Clamp is a versatile tool for mounting cameras and accessories securely."
+      },
+      {
+        "category": "lenses",
+        "product_name": "Sigma 35mm f/1.4 Art Lens",
+        "product_image": "image_url_9.jpg",
+        "provider_name": "Lens World",
+        "provider_image": "provider_image_url_9.jpg",
+        "price_per_day": 30.00,
+        "description": "The Sigma 35mm f/1.4 Art Lens delivers sharp and high-quality images, perfect for various photography styles."
+      },
+      {
+        "category": "Electrics",
+        "product_name": "Blackmagic Design Pocket Cinema Camera 4K",
+        "product_image": "image_url_10.jpg",
+        "provider_name": "CineTech",
+        "provider_image": "provider_image_url_10.jpg",
+        "price_per_day": 65.00,
+        "description": "The Blackmagic Design Pocket Cinema Camera 4K is a compact cinema camera with 4K recording capabilities."
+      },
+      {
+        "category": "production",
+        "product_name": "DJI Mavic Air 2 Drone",
+        "product_image": "image_url_11.jpg",
+        "provider_name": "Aerial Productions",
+        "provider_image": "provider_image_url_11.jpg",
+        "price_per_day": 45.00,
+        "description": "The DJI Mavic Air 2 is a feature-packed drone suitable for aerial videography and photography."
+      },
+      {
+        "category": "camera",
+        "product_name": "Sony Alpha A6400 Mirrorless Camera",
+        "product_image": "image_url_12.jpg",
+        "provider_name": "Camera Emporium",
+        "provider_image": "provider_image_url_12.jpg",
+        "price_per_day": 45.00,
+        "description": "The Sony Alpha A6400 is a versatile mirrorless camera with advanced features for both photographers and videographers."
+      },
+      {
+        "category": "camera",
+        "product_name": "Panasonic Lumix GH5S",
+        "product_image": "image_url_13.jpg",
+        "provider_name": "Lumix Pro Rentals",
+        "provider_image": "provider_image_url_13.jpg",
+        "price_per_day": 60.00,
+        "description": "The Panasonic Lumix GH5S is a 4K mirrorless camera designed for professional video production."
+      },
+      {
+        "category": "camera accessories",
+        "product_name": "Manfrotto Compact Action Tripod",
+        "product_image": "image_url_14.jpg",
+        "provider_name": "PhotoGear Plus",
+        "provider_image": "provider_image_url_14.jpg",
+        "price_per_day": 12.00,
+        "description": "The Manfrotto Compact Action Tripod is a lightweight and portable solution for stable photography."
+      },
+      {
+        "category": "camera accessories",
+        "product_name": "DJI Osmo Mobile 4 Gimbal",
+        "product_image": "image_url_15.jpg",
+        "provider_name": "Gimbal Solutions",
+        "provider_image": "provider_image_url_15.jpg",
+        "price_per_day": 18.00,
+        "description": "The DJI Osmo Mobile 4 Gimbal stabilizes your smartphone for smooth and professional-quality videos."
+      },
+      {
+        "category": "digital",
+        "product_name": "Canon EOS R5 Mirrorless Camera",
+        "product_image": "image_url_16.jpg",
+        "provider_name": "Canon Pro Rentals",
+        "provider_image": "provider_image_url_16.jpg",
+        "price_per_day": 75.00,
+        "description": "The Canon EOS R5 is a high-end mirrorless camera with 8K video capabilities and outstanding photo quality."
+      },
+      {
+        "category": "digital",
+        "product_name": "Nikon Z6 Mirrorless Camera",
+        "product_image": "image_url_17.jpg",
+        "provider_name": "Nikon Enthusiasts",
+        "provider_image": "provider_image_url_17.jpg",
+        "price_per_day": 50.00,
+        "description": "The Nikon Z6 is a full-frame mirrorless camera known for its excellent low-light performance and 4K video recording."
+      },
+      {
+        "category": "audio",
+        "product_name": "Sennheiser MKH-416 Shotgun Microphone",
+        "product_image": "image_url_18.jpg",
+        "provider_name": "Audio Pros",
+        "provider_image": "provider_image_url_18.jpg",
+        "price_per_day": 25.00,
+        "description": "The Sennheiser MKH-416 is a top-notch shotgun microphone for broadcast and film production."
+      },
+      {
+        "category": "audio",
+        "product_name": "Rode Wireless GO Compact Microphone",
+        "product_image": "image_url_19.jpg",
+        "provider_name": "Wireless Audio Gear",
+        "provider_image": "provider_image_url_19.jpg",
+        "price_per_day": 15.00,
+        "description": "The Rode Wireless GO is a compact wireless microphone system for vloggers and content creators."
+      },
+      {
+        "category": "lighting",
+        "product_name": "Aputure AL-M9 LED Light",
+        "product_image": "image_url_20.jpg",
+        "provider_name": "Lighting Innovations",
+        "provider_image": "provider_image_url_20.jpg",
+        "price_per_day": 10.00,
+        "description": "The Aputure AL-M9 is a portable and versatile LED light for various lighting setups."
+      },
+      {
+        "category": "lighting",
+        "product_name": "Neewer 660 LED Video Light",
+        "product_image": "image_url_21.jpg",
+        "provider_name": "Neewer Lighting",
+        "provider_image": "provider_image_url_21.jpg",
+        "price_per_day": 14.00,
+        "description": "The Neewer 660 LED Video Light provides adjustable brightness and color temperature for video production."
+      },
+      {
+        "category": "grips",
+        "product_name": "Matthews C-Stand with Grip Head",
+        "product_image": "image_url_22.jpg",
+        "provider_name": "Grip Master",
+        "provider_image": "provider_image_url_22.jpg",
+        "price_per_day": 22.00,
+        "description": "The Matthews C-Stand with Grip Head is a versatile tool for mounting lighting and grip equipment."
+      },
+      {
+        "category": "grips",
+        "product_name": "Kupo Super Viser Clamp",
+        "product_image": "image_url_23.jpg",
+        "provider_name": "Kupo Grip Solutions",
+        "provider_image": "provider_image_url_23.jpg",
+        "price_per_day": 12.00,
+        "description": "The Kupo Super Viser Clamp is a versatile grip accessory for various production needs."
+      },
+      {
+        "category": "lenses",
+        "product_name": "Canon EF 70-200mm f/2.8L IS II USM Lens",
+        "product_image": "image_url_24.jpg",
+        "provider_name": "Canon Lens Pro",
+        "provider_image": "provider_image_url_24.jpg",
+        "price_per_day": 35.00,
+        "description": "The Canon EF 70-200mm f/2.8L II is a professional telephoto zoom lens for high-quality photography."
+      },
+      {
+        "category": "lenses",
+        "product_name": "Tamron 24-70mm f/2.8 Di VC USD G2 Lens",
+        "product_image": "image_url_25.jpg",
+        "provider_name": "Tamron Lens Rentals",
+        "provider_image": "provider_image_url_25.jpg",
+        "price_per_day": 28.00,
+        "description": "The Tamron 24-70mm f/2.8 G2 lens is a versatile zoom lens ideal for a wide range of photographic situations."
+      },
+      {
+        "category": "Electrics",
+        "product_name": "Atomos Ninja V 5 4K HDMI Recording Monitor",
+        "product_image": "image_url_26.jpg",
+        "provider_name": "Atomos Tech Rentals",
+        "provider_image": "provider_image_url_26.jpg",
+        "price_per_day": 30.00,
+        "description": "The Atomos Ninja V is a 5-inch 4K HDMI monitor and recorder for professional video production."
+      },
+      {
+        "category": "Electrics",
+        "product_name": "Tascam DR-40X Portable Audio Recorder",
+        "product_image": "image_url_27.jpg",
+        "provider_name": "Audio Recorder Pros",
+        "provider_image": "provider_image_url_27.jpg",
+        "price_per_day": 20.00,
+        "description": "The Tascam DR-40X is a portable audio recorder with XLR inputs, ideal for field recording."
+      },
+      {
+        "category": "production",
+        "product_name": "Zhiyun Crane 3S Handheld Stabilizer",
+        "product_image": "image_url_28.jpg",
+        "provider_name": "Stabilizer Hub",
+        "provider_image": "provider_image_url_28.jpg",
+        "price_per_day": 40.00,
+        "description": "The Zhiyun Crane 3S is a powerful handheld stabilizer for cinematic camera setups."
+      },
+      {
+        "category": "production",
+        "product_name": "Sachtler Flowtech 100 MS Tripod System",
+        "product_image": "image_url_29.jpg",
+        "provider_name": "Tripod Pros",
+        "provider_image": "provider_image_url_29.jpg",
+        "price_per_day": 28.00,
+        "description": "The Sachtler Flowtech 100 MS is a versatile tripod system for professional video production."
+      }
+    ]
+  }
