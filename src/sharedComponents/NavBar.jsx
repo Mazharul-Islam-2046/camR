@@ -1,8 +1,21 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+
+  const [path, setPath] = useState("/")
+    const location = useLocation()
+    
+    useEffect(() => {
+        const currentPath = location.pathname
+        setPath(currentPath)
+    },[location])
+
+
+
+
+
     const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,12 +47,12 @@ const NavBar = () => {
   }, []);
 
 
- const conditionalClass = `${isScrolled ? "bg-gray-900 text-white" : "bg-white bg-opacity-5 text-white"}`
+ const conditionalClass = `${isScrolled || path !== "/" ? "bg-gray-900 text-white" : "bg-white bg-opacity-5 text-white"}`
 
     return (
         <div className={`px-14 sticky top-0 z-10 ${conditionalClass}`}>
             {/* NavContainer */}
-            <div className={`${isScrolled ? "" : "border-b-2"} px-1 py-5 flex items-center
+            <div className={`${isScrolled || path !== "/" ? "" : "border-b-2"} px-1 py-5 flex items-center
             `}>
                 {/* Logo and Menu Container */}
                 <div className="flex gap-8 grow">
@@ -56,7 +69,9 @@ const NavBar = () => {
                 {/* Longin or Profile or mobile menu */}
                 <div>
                   <button className={`py-1 px-6 border-2 font-primary border-white`}>
-                    <NavLink>Login</NavLink>
+                    {
+                      path === "/login" ? <NavLink to="/register">Register</NavLink> : <NavLink to="/login">Login</NavLink>
+                    }
                   </button>
                 </div>
             </div>            

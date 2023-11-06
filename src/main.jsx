@@ -10,9 +10,9 @@ import Home from './pages/Home/Home';
 import Error from './pages/Error';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import AllServices from './pages/AllServices';
 import BasePage from './pages/Home/HomeChildrenPages/BasePage';
 import CameraPage from './pages/Home/HomeChildrenPages/CameraPage';
+import AllProducts from './pages/AllProducts/AllProducts';
 
 
 const router = createBrowserRouter([
@@ -49,8 +49,8 @@ const router = createBrowserRouter([
         element: <Register/>
       },
       {
-        path: "/services",
-        element: <AllServices/>
+        path: "/allproducts",
+        element: <AllProducts/>
       }
     ]
   },
