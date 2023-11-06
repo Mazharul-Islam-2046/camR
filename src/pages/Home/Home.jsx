@@ -1,16 +1,16 @@
 import { Helmet } from "react-helmet";
 import { Outlet } from "react-router-dom";
+import Hearder from "./HomeComponents/Hearder";
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="h-[90vw] relative -top-20">
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>My Title</title>
-                <link rel="canonical" href="http://mysite.com/example" />
+                <title>CamR || Home</title>
             </Helmet>
-            <h1>This is Home</h1>
+            <Hearder/>
             <Outlet/>
         </div>
     );

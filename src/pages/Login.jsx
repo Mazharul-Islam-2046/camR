@@ -6,8 +6,7 @@ const Login = () => {
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Login</title>
-                <link rel="canonical" href="http://mysite.com/example" />
+                <title>CamR || Login</title>
             </Helmet>
             <h1>This is Login</h1>
         </div>
