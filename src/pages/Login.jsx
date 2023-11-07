@@ -5,9 +5,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import Swal from 'sweetalert2'
 
-
 const Login = () => {
-
 
     const location = useLocation();
     const navigate = useNavigate()
@@ -20,6 +18,24 @@ const Login = () => {
       googleSignIn()
       .then(result => {
         setPhoto(result.user.photoURL);
+        console.log(result.user);
+        const userData = {
+          name: result.user.displayName,
+          email: result.user.email,
+          photo: result.user.photoURL,
+          uid: result.user.uid
+        }
+        
+        fetch(
+          "http://localhost:5000/users",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+          }
+        )
         result && Swal.fire('Successfully Loged In')
         navigate(location?.state ? location.state : '/')
       })

@@ -7,9 +7,30 @@ import 'react-modern-drawer/dist/index.css'
 import Swal from "sweetalert2";
 
 const NavBar = () => {
-  const { user, photo, loading, logOut } = useContext(AuthContext)
+  const { user, photo, loading, logOut, setPhoto } = useContext(AuthContext)
   const [path, setPath] = useState("/")
   const location = useLocation()
+
+
+
+
+
+
+  useEffect(() => {
+    const uid = user?.uid
+    console.log(uid);
+    fetch(`http://localhost:5000/users/${uid}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPhoto(data.photo)
+      })
+  }, [user])
+
+
+
+
+
+
 
   useEffect(() => {
     const currentPath = location.pathname
@@ -117,7 +138,7 @@ const NavBar = () => {
                 path === "/login" ? <NavLink to="/register">Register</NavLink> : <NavLink to="/login">Login</NavLink>
               }
             </button>
-            <button onClick={toggleDrawer} className={`${user ? "" : "hidden"} rounded-full overflow-hidden`}>
+            <div onClick={toggleDrawer} className={`${user ? "" : "hidden"} rounded-full overflow-hidden`}>
               <img className="w-8 h-8" src={photo || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} alt="" />
               <Drawer
                 open={isOpen}
@@ -133,7 +154,7 @@ const NavBar = () => {
                   <button onClick={handleLogOut} className="border-b-2 py-3">LogOut</button>
                 </div>
               </Drawer>
-            </button>
+            </div>
           </div>
         </div>
       </div>

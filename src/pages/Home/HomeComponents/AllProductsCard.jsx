@@ -43,6 +43,6 @@ const AllProductsCard = ({ product }) => {
 };
 
 AllProductsCard.propTypes = {
-    product: PropTypes.string
+    product: PropTypes.object
 };
 export default AllProductsCard;

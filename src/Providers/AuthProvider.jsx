@@ -24,10 +24,13 @@ const AuthProvider = ({ children }) => {
 
     // Navbar profile image 
     const [photo, setPhoto] = useState(null)
+    // const [uid, setUid] = useState('')
 
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -67,7 +70,9 @@ const AuthProvider = ({ children }) => {
         logOut,
         googleSignIn,
         setPhoto,
-        photo
+        photo,
+        // setUid,
+        // uid
     };
 
 

@@ -34,7 +34,7 @@ const PopularProductCard = ({product}) => {
 };
 
 PopularProductCard.propTypes = {
-    product: PropTypes.string
+    product: PropTypes.object
   };
 
 export default PopularProductCard;
