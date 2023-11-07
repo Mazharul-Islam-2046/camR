@@ -1,8 +1,69 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link} from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
+
+
+
+    const { createUser } = useContext(AuthContext);
+//   const location = useLocation();
+//   const navigate = useNavigate()
+
+  const handleRegistration = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    // const formData = {
+    //   email,
+    //   password,
+    // };
+
+    if (password.length < 6) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Write password more then 6 charecters",
+      });
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Write at least a Capital letter"
+      });
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Write atleast 1 smaller letter",
+      });
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             <Helmet>
@@ -15,7 +76,7 @@ const Register = () => {
                 <div>
                     <h3 className="text-center text-4xl font-bold font-secondary mb-6">Register</h3>
                     <div className="bg-white border-2 py-8 px-6">
-                        <form className="flex flex-col">
+                        <form onSubmit={handleRegistration} className="flex flex-col">
 
                             <input className="border-b focus:outline-none mb-5 pt-2 pb-1 px-1 text-xl font-primary" type="name" name="name" placeholder="Name" id="" />
                             <input className="border-b focus:outline-none mb-5 pt-2 pb-1 px-1 text-xl font-primary" type="email" name="email" placeholder="Email" id="" />
