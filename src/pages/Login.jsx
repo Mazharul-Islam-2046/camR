@@ -1,8 +1,102 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+// import { FcGoogle } from "react-icons/fc";
+import Swal from 'sweetalert2'
 
 
 const Login = () => {
+
+
+    const location = useLocation();
+    const navigate = useNavigate()
+  
+    
+  
+    const {signIn, googleSignIn, setPhoto} = useContext(AuthContext)
+  
+    const handleGooglesignIng = () => {
+      googleSignIn()
+      .then(result => {
+        setPhoto(result.user.photoURL);
+        result && Swal.fire('Successfully Loged In')
+        navigate(location?.state ? location.state : '/')
+      })
+      .catch(error => {
+        error && Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error.code,
+        })
+      })
+    }
+  
+  
+  
+    const handleLogin = e => {
+      e.preventDefault()
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+  
+  
+      if (password.length < 6) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Write password more then 6 charecters",
+        });
+        return;
+      } else if (!/[A-Z]/.test(password)) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Write at least a Capital letter"
+        });
+        return;
+      } else if (!/[a-z]/.test(password)) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Write atleast 1 smaller letter",
+        });
+        return;
+      }
+  
+  
+  
+  
+      signIn(email, password)
+      .then (result => {
+        setPhoto(result.user.photoURL);
+        Swal.fire('Successfully Loged In')
+        result && navigate(location?.state ? location.state : '/');
+      })
+      .catch(error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error?.code,
+        })
+        console.log(error?.code);
+      })
+    }
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             <Helmet>
@@ -14,15 +108,30 @@ const Login = () => {
 
                 <div>
                     <h3 className="text-center text-4xl font-bold font-secondary mb-6">Login</h3>
+
+                    {/* Form Container */}
                     <div className="bg-white border-2 py-8 px-6">
-                        <form className="flex flex-col">
+
+
+                        {/* Form */}
+                        <form onSubmit={handleLogin} className="flex flex-col">
+
+                            {/* Email */}
                             <input className="border-b focus:outline-none mb-5 pt-2 pb-1 px-1 text-xl font-primary" type="email" name="email" placeholder="Email" id="" />
+
+
+                            {/* Password */}
                             <input className="border-b mb-5 py-2 focus:border-b focus:outline-none px-1 text-xl font-primary" type="password" placeholder="Password" name="password" id="" />
+
+                            {/* Don't have an account? */}
                             <div className="mt-5">
                                 <p className="text-sm text-center">
                                     Do not have an account? <Link to="/register" className="hover:border-b-2 hover:border-black font-medium">Register</Link>
                                 </p>
                             </div>
+
+
+                            {/* Submit */}
                             <input className="text-white font-primary font-semibold text-xl bg-gray-600 py-1 mt-3 hover:bg-gray-400 cursor-pointer" type="submit" value="Login" />
                         </form>
                     </div>

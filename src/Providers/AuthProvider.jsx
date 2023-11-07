@@ -20,7 +20,10 @@ const googleProvider = new GoogleAuthProvider();
 
 const auth = getAuth(app);
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
+
+    // Navbar profile image 
+    const [photo, setPhoto] = useState(null)
 
 
     const [user, setUser] = useState(null);
@@ -62,7 +65,9 @@ const AuthProvider = ({children}) => {
         createUser,
         signIn,
         logOut,
-        googleSignIn
+        googleSignIn,
+        setPhoto,
+        photo
     };
 
 
@@ -79,6 +84,6 @@ const AuthProvider = ({children}) => {
 
 AuthProvider.propTypes = {
     children: PropTypes.node,
-  };
+};
 
 export default AuthProvider;
