@@ -21,7 +21,7 @@ const PopularProductCard = ({product}) => {
                     <p className="text-xl font-medium">{provider_name}</p>
                 </div>
                 <h3 className="text-2xl font-bold mb-1">{product_name}</h3>
-                <p className="text-lg mb-5">{description}</p>
+                <p className="text-lg mb-5">{description.slice(0, 100)}</p>
                 <div className="flex justify-between">
                 <p className="py-1 px-3 bg-black text-white">Price: {price_per_day}$ / day</p>
                 <button className="px-3 py-1 border-b-2 hover:border-black">

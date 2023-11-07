@@ -92,11 +92,12 @@ const BasePage = () => {
 
 
 
-                {/* All Product Section */}
+                {/* Newly added Product Section */}
                 <div>
                     <Swiper
-                        spaceBetween={50}
-                        slidesPerView={4.5}
+                        autoHeight={false}
+                        spaceBetween={20}
+                        slidesPerView={3.5}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
                     >
