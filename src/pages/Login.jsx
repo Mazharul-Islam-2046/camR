@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-// import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 import Swal from 'sweetalert2'
 
 
@@ -23,7 +23,7 @@ const Login = () => {
         result && Swal.fire('Successfully Loged In')
         navigate(location?.state ? location.state : '/')
       })
-      .catch(error => {
+      .catch(error => {console.log("error hit");
         error && Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -39,6 +39,7 @@ const Login = () => {
       const form = e.target;
       const email = form.email.value;
       const password = form.password.value;
+      console.log("email hit");
   
   
       if (password.length < 6) {
@@ -129,6 +130,11 @@ const Login = () => {
                                     Do not have an account? <Link to="/register" className="hover:border-b-2 hover:border-black font-medium">Register</Link>
                                 </p>
                             </div>
+
+                            {/* Google SignIn */}
+                            <button type="button" onClick={handleGooglesignIng} className="flex items-center justify-center mt-6 mb-1 bg-blue-500 hover:bg-gray-700 text-white py-2">
+                                <FcGoogle></FcGoogle> SignIn with Google
+                            </button>
 
 
                             {/* Submit */}
