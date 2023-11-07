@@ -23,7 +23,7 @@ const Login = () => {
         result && Swal.fire('Successfully Loged In')
         navigate(location?.state ? location.state : '/')
       })
-      .catch(error => {console.log("error hit");
+      .catch(error => {
         error && Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -39,7 +39,6 @@ const Login = () => {
       const form = e.target;
       const email = form.email.value;
       const password = form.password.value;
-      console.log("email hit");
   
   
       if (password.length < 6) {
