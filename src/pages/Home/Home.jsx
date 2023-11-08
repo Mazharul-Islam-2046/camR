@@ -20,7 +20,7 @@ const Home = () => {
 
 
     return (
-        <div className="relative -top-20">
+        <div className="relative -top-20 mb-24">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>CamR || Home</title>

@@ -33,6 +33,8 @@ import AllProductsLenses from './pages/AllProducts/AllProductsPages/AllProductsL
 import AllProductsProduction from './pages/AllProducts/AllProductsPages/AllProductsProduction';
 import AllProductsElectrics from './pages/AllProducts/AllProductsPages/AllProductsElectrics';
 import AllProductsBase from './pages/AllProducts/AllProductsPages/AllProductsBase';
+import MyBookings from './pages/DashBoard/DashboardChilPages/MyBookings';
+import AddProducts from './pages/DashBoard/DashboardChilPages/AddProducts';
 
 
 const router = createBrowserRouter([
@@ -151,7 +153,17 @@ const router = createBrowserRouter([
       },
       {
         path:"/dashboard",
-        element: <Dashboard/>
+        element: <Dashboard/>,
+        children:[
+          {
+            path: "/dashboard",
+            element: <MyBookings/>
+          },
+          {
+            path: "/dashboard/addproducts",
+            element: <AddProducts/>
+          }
+        ]
       }
     ]
   },
