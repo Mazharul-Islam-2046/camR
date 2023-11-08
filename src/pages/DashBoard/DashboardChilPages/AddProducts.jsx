@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 const AddProducts = () => {
 
     const { user, photo } = useContext(AuthContext)
-    console.log(user);
 
     const handleForm = (e) => {
         e.preventDefault()
@@ -18,6 +17,7 @@ const AddProducts = () => {
             description: e.target.description.value,
             provider_name: e.target.providerName.value,
             provider_image: photo,
+            provider_id: user.uid,
             provider_email: e.target.providerEmail.value,
             price_per_day: e.target.pricePerDay.value,
             location: e.target.location.value,

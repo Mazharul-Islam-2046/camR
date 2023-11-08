@@ -25,7 +25,8 @@ const Register = () => {
     const formData = {
       email,
       name,
-      photo
+      photo,
+      bookedProducts:[]
     };
 
     if (password.length < 6) {

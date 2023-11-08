@@ -23,7 +23,9 @@ const Login = () => {
           name: result.user.displayName,
           email: result.user.email,
           photo: result.user.photoURL,
-          uid: result.user.uid
+          uid: result.user.uid,
+          bookedProducts:[]
+
         }
         
         fetch(
