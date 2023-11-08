@@ -17,6 +17,9 @@ const DashboardProductCard = ({ product }) => {
     } = product
 
 
+    console.log(_id);
+
+
 
 
 
@@ -35,8 +38,8 @@ const DashboardProductCard = ({ product }) => {
                     <div className="flex justify-between pr-12 items-center">
                         <p>${price_per_day}/Day</p>
                     <div className='flex gap-1'>
-                    <button to={`/deatails/:${_id}`} className="py-1 border-2 border-white px-2">WithDraw</button>
-                    <Link to={`/deatails/:${_id}`} className="py-1 border-2 border-white px-2">Edit</Link>
+                    <button className="py-1 border-2 border-white px-2">WithDraw</button>
+                    <Link to={`edit/${_id}`} className="py-1 border-2 border-white px-2">Edit</Link>
                     </div>
                     </div>
                 </div>

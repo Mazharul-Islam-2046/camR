@@ -36,6 +36,8 @@ import AllProductsBase from './pages/AllProducts/AllProductsPages/AllProductsBas
 import MyBookings from './pages/DashBoard/DashboardChilPages/MyBookings';
 import AddProducts from './pages/DashBoard/DashboardChilPages/AddProducts';
 import MyListedProducts from './pages/DashBoard/DashboardChilPages/MyListedProducts';
+import ProductEidtPage from './pages/DashBoard/DashboardChilPages/ProductEidtPage';
+import PrivateRoutes from './Providers/PrivateRoutes';
 
 
 const router = createBrowserRouter([
@@ -106,7 +108,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/allproducts",
-        element: <AllProducts />,
+        element: <PrivateRoutes><AllProducts /></PrivateRoutes>,
         children: [
           {
             path: "/allproducts/camera",
@@ -154,7 +156,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/dashboard",
-        element: <Dashboard/>,
+        element: <PrivateRoutes><Dashboard/></PrivateRoutes>,
         children:[
           {
             path: "/dashboard",
@@ -167,6 +169,11 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/myListedProducts",
             element: <MyListedProducts/>
+          },
+          {
+            path: "/dashboard/myListedProducts/edit/:id",
+            element: <ProductEidtPage/>,
+            loader: ({params}) => fetch(`https://cam-r-server.vercel.app/products/ids/${params.id}`)
           }
         ]
       }
