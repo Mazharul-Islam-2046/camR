@@ -19,21 +19,21 @@ import AuthProvider from './Providers/AuthProvider';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AllAboveAll/>,
-    errorElement: <Error/>,
+    element: <AllAboveAll />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
-        element: <Home/>,
-        children:[
+        element: <Home />,
+        children: [
           {
             path: "/",
-            element: <BasePage/>,
+            element: <BasePage />,
             loader: () => fetch('productData.json')
           },
           {
             path: "/camera",
-            element: <CameraPage/>
+            element: <CameraPage />
           },
           {
             path: "/add",
@@ -43,15 +43,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element:<Login/>,
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Register/>
+        element: <Register />
       },
       {
         path: "/allproducts",
-        element: <AllProducts/>
+        element: <AllProducts />
       }
     ]
   },

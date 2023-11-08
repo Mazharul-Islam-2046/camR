@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 
-const PopularProductCard = ({product}) => {
+const AllProductsCards = ({product}) => {
     const {
         category,
         product_name,
@@ -14,7 +14,7 @@ const PopularProductCard = ({product}) => {
     } = product
     return (
         <div className="space-y-3 font-primary">
-            <img className="h-80 object-cover w-full" src={product_image} alt={product_name} />
+            <img className="h-52 object-cover w-full" src={product_image} alt={product_name} />
             <div className="pl-3 flex flex-col">
                 <div className="flex gap-3 items-center mb-2">
                     <img className="w-10 h-10 rounded-full object-cover" src="https://static.bhphotovideo.com/explora/sites/default/files/red_komodo-lifestyle_feat_a_feat.jpg" alt="" />
@@ -33,8 +33,8 @@ const PopularProductCard = ({product}) => {
     );
 };
 
-PopularProductCard.propTypes = {
+AllProductsCards.propTypes = {
     product: PropTypes.object
   };
 
-export default PopularProductCard;
+export default AllProductsCards;

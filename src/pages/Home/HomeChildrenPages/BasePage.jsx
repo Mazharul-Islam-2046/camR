@@ -1,23 +1,27 @@
 import { AiFillDollarCircle } from "react-icons/ai";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { BsFillShieldLockFill } from "react-icons/bs";
-import { NavLink, useLoaderData } from "react-router-dom";
-import AllProductsCard from "../HomeComponents/AllProductsCard";
+import { NavLink} from "react-router-dom";
+import NewlyAddedCards from "../HomeComponents/NewlyAddedCards";
+import AllProductsCards from "../HomeComponents/AllProductsCards";
 import PopularProductCard from "../HomeComponents/PopularProductCard";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const BasePage = () => {
 
-    const { products } = useLoaderData()
+    // const { products } = useLoaderData()
     const [popularProduct, setPopularProduct] = useState([])
+    const { products } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch("popularProduct.json")
+        fetch("http://localhost:5000/products/popular")
             .then((res) => res.json())
             .then((data) => {
-                setPopularProduct(data.popular)
+                setPopularProduct(data)
             })
     }, [])
     return (
@@ -102,7 +106,7 @@ const BasePage = () => {
                         onSwiper={(swiper) => console.log(swiper)}
                     >
                         {
-                            products.slice(0, 8).map((product, idx) => <SwiperSlide key={idx}><AllProductsCard product={product}></AllProductsCard></SwiperSlide>)
+                            products.slice(0, 8).map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
                         }
                     </Swiper>
                 </div>
@@ -129,7 +133,7 @@ const BasePage = () => {
                 <h3 className="text-3xl font-bold mb-10 text-center font-secondary">All Products</h3>
                 <div className="grid grid-cols-3 gap-4 gap-y-20">
                     {
-                        products.slice(0, 8).map((product, idx) => <PopularProductCard key={idx} product={product}></PopularProductCard>)
+                        products.slice(0, 8).map((product, idx) => <AllProductsCards key={idx} product={product}></AllProductsCards>)
                     }
                 </div>
                 <button className="mt-20 py-2 px-5 border-2 border-black w-1/6 hover:bg-black hover:text-white">

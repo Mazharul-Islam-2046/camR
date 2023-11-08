@@ -20,7 +20,32 @@ const googleProvider = new GoogleAuthProvider();
 
 const auth = getAuth(app);
 
+
+
+
+
+
+
+
+
+
 const AuthProvider = ({ children }) => {
+    
+    const [products, setProducts] = useState([]);
+
+
+
+
+    useEffect(()=>{
+        fetch("http://localhost:5000/products")
+        .then((res) => res.json())
+            .then((data) => {
+                setProducts(data)
+            })
+    },[])
+
+
+
 
     // Navbar profile image 
     const [photo, setPhoto] = useState(null)
@@ -71,6 +96,7 @@ const AuthProvider = ({ children }) => {
         googleSignIn,
         setPhoto,
         photo,
+        products
         // setUid,
         // uid
     };
