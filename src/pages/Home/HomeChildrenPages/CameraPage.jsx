@@ -1,9 +1,10 @@
+import HomeChildPageTemp from "../HomeComponents/HomeChildPageTamp";
 
 
 const CameraPage = () => {
     return (
         <div>
-            <h1>This is Camera Page</h1>
+            <HomeChildPageTemp category={"camera"}></HomeChildPageTemp>
         </div>
     );
 };

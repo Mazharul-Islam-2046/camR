@@ -14,6 +14,14 @@ import BasePage from './pages/Home/HomeChildrenPages/BasePage';
 import CameraPage from './pages/Home/HomeChildrenPages/CameraPage';
 import AllProducts from './pages/AllProducts/AllProducts';
 import AuthProvider from './Providers/AuthProvider';
+import CameraAccessories from './pages/Home/HomeChildrenPages/cameraAccessories';
+import Digital from './pages/Home/HomeChildrenPages/Digital';
+import Audio from './pages/Home/HomeChildrenPages/Audio';
+import Lighting from './pages/Home/HomeChildrenPages/Lighting';
+import Grips from './pages/Home/HomeChildrenPages/Grips';
+import Lenses from './pages/Home/HomeChildrenPages/Lenses';
+import Electrics from './pages/Home/HomeChildrenPages/Electrics';
+import Production from './pages/Home/HomeChildrenPages/Production';
 
 
 const router = createBrowserRouter([
@@ -36,9 +44,42 @@ const router = createBrowserRouter([
             element: <CameraPage />
           },
           {
+            path: "/camera_accessories",
+            element: <CameraAccessories/>
+          },
+          {
+            path: "/digital",
+            element: <Digital/>
+          },
+          {
+            path: "/audio",
+            element: <Audio/>
+          },
+          {
+            path: "/lighting",
+            element: <Lighting/>
+          },
+          {
+            path:"/grips",
+            element: <Grips/>
+          },
+          {
+            path: "/lenses",
+            element: <Lenses/>
+          },
+          {
+            path: "/Electrics",
+            element:<Electrics/>
+          },
+          {
+            path: "/production",
+            element: <Production/>
+          },
+          {
             path: "/add",
             element: <h1>Add Page</h1>
-          }
+          },
+
         ]
       },
       {

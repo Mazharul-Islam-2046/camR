@@ -15,7 +15,22 @@ const BasePage = () => {
 
     // const { products } = useLoaderData()
     const [popularProduct, setPopularProduct] = useState([])
+    const [newProducts, setNewProducts] = useState([])
     const { products } = useContext(AuthContext)
+
+
+
+    useEffect(() => {
+        const length = products.length
+                if (length > 7) {
+
+                    const newProductAmount = length - 6
+                    setNewProducts(products.slice(newProductAmount, length))
+                }
+                else{
+                    setNewProducts(products)
+                }
+    },[products])
 
     useEffect(() => {
         fetch("http://localhost:5000/products/popular")
@@ -106,7 +121,7 @@ const BasePage = () => {
                         onSwiper={(swiper) => console.log(swiper)}
                     >
                         {
-                            products.slice(0, 8).map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                            newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
                         }
                     </Swiper>
                 </div>
