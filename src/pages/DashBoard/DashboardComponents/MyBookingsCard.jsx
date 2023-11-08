@@ -8,10 +8,20 @@ const MyBookingsCard = ({id}) => {
 
     const [product, setProduct] = useState({})
 
+    const {
+        product_name,
+        product_image,
+        provider_name,
+        provider_image,
+        price_per_day,
+        description,
+        _id
+    } = product
+
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`http://localhost:5000/products/ids/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setProduct(data)
@@ -26,7 +36,7 @@ const MyBookingsCard = ({id}) => {
                 <img className=" w-48 h-36 object-cover" src={product_image} alt="" />
                 <div>
                     <h3 className="text-lg font-semibold">{product_name}</h3>
-                    <p className="text-sm mb-4">{description.slice(0, 120)}...</p>
+                    <p className="text-sm mb-4">{description}...</p>
                     <div className="flex gap-3 mb-3 items-center">
                         <img className="w-7 h-7 rounded-full object-cover" src={provider_image} alt="" />
                         <p className="text-xs">{provider_name}</p>
@@ -42,6 +52,6 @@ const MyBookingsCard = ({id}) => {
     );
 };
 MyBookingsCard.propTypes = {
-    id: PropTypes.object
+    id: PropTypes.string
 };
 export default MyBookingsCard;

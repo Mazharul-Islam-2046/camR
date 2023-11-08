@@ -9,16 +9,16 @@ const MyBookings = () => {
 
     const { user } = useContext(AuthContext)
 
-    const [productsId, setProductsId] = useState([])
+    const [ids, setids] = useState([])
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.uid}`)
+        fetch(`http://localhost:5000/users/${user?.uid}`)
             .then((res) => res.json())
             .then((data) => {
-                setProductsId(data.bookedProducts)
+                setids(data.bookedProducts)
             })
-    }, [user.uid])
+    }, [user])
 
 
 
@@ -28,7 +28,7 @@ const MyBookings = () => {
 
 
             {
-                productsId.length <= 0 ?
+                ids.length <= 0 ?
 
 
                     <h3 className="text-3xl font-secondary font-semibold text-white">No Product Found</h3>
@@ -40,8 +40,8 @@ const MyBookings = () => {
 
                     <div>
                         {
-                            productsId.map((id, idx) =>
-                                <MyBookingsCard key={idx} product={id}></MyBookingsCard>
+                            ids.map((id, idx) =>
+                                <MyBookingsCard key={idx} id={id}></MyBookingsCard>
                             )
                         }
                     </div>

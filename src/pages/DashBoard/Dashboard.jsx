@@ -17,7 +17,7 @@ const Dashboard = () => {
 
 
 
-            <NavLink className="text-white capitalize text-lg font-primary border-b-2 border-white mt-2 text-center py-2">My Listed Products</NavLink>
+            <NavLink to='/dashboard/myListedProducts' className="text-white capitalize text-lg font-primary border-b-2 border-white mt-2 text-center py-2">My Listed Products</NavLink>
 
 
 

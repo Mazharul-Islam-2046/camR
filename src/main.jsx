@@ -35,6 +35,7 @@ import AllProductsElectrics from './pages/AllProducts/AllProductsPages/AllProduc
 import AllProductsBase from './pages/AllProducts/AllProductsPages/AllProductsBase';
 import MyBookings from './pages/DashBoard/DashboardChilPages/MyBookings';
 import AddProducts from './pages/DashBoard/DashboardChilPages/AddProducts';
+import MyListedProducts from './pages/DashBoard/DashboardChilPages/MyListedProducts';
 
 
 const router = createBrowserRouter([
@@ -162,6 +163,10 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/addproducts",
             element: <AddProducts/>
+          },
+          {
+            path: "/dashboard/myListedProducts",
+            element: <MyListedProducts/>
           }
         ]
       }

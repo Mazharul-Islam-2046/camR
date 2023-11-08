@@ -9,12 +9,12 @@ const MyListedProducts = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${user.uid}`)
+        fetch(`http://localhost:5000/products/uid/${user?.uid}`)
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data)
             })
-    }, [user.uid])
+    }, [user?.uid])
 
 
 
