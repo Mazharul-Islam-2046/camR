@@ -21,7 +21,7 @@ const MyBookingsCard = ({id}) => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/ids/${id}`)
+        fetch(`https://cam-r-server.vercel.app/products/ids/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setProduct(data)

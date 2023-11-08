@@ -9,7 +9,7 @@ const MyListedProducts = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/uid/${user?.uid}`)
+        fetch(`https://cam-r-server.vercel.app/products/uid/${user?.uid}`)
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data)

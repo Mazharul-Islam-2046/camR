@@ -21,7 +21,7 @@ const HomeChildPageTemp = ({ category }) => {
     const [newProducts, setNewProducts] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${category}/popular`)
+        fetch(`https://cam-r-server.vercel.app/products/${category}/popular`)
             .then((res) => res.json())
             .then((data) => {
                 setPopularProduct(data)
@@ -31,7 +31,7 @@ const HomeChildPageTemp = ({ category }) => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${category}`)
+        fetch(`https://cam-r-server.vercel.app/products/${category}`)
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data)

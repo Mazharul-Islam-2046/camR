@@ -19,7 +19,7 @@ const NavBar = () => {
   useEffect(() => {
     const uid = user?.uid
     console.log(uid);
-    fetch(`http://localhost:5000/users/${uid}`)
+    fetch(`https://cam-r-server.vercel.app/users/${uid}`)
       .then((res) => res.json())
       .then((data) => {
         setPhoto(data.photo)

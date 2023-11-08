@@ -11,7 +11,7 @@ const AllProductsDisplayPageTepm = ({ category }) => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${category}`)
+        fetch(`https://cam-r-server.vercel.app/products/${category}`)
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data)

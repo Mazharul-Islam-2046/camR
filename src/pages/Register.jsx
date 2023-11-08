@@ -60,7 +60,7 @@ const Register = () => {
 
         // posting the users to database
         fetch(
-          "http://localhost:5000/users",
+          "https://cam-r-server.vercel.app/users",
           {
             method: "POST",
             headers: {

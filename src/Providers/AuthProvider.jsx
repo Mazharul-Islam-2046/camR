@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
 
 
     useEffect(()=>{
-        fetch("http://localhost:5000/products")
+        fetch("https://cam-r-server.vercel.app/products")
         .then((res) => res.json())
             .then((data) => {
                 setProducts(data)

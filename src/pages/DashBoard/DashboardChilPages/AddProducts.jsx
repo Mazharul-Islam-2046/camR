@@ -27,7 +27,7 @@ const AddProducts = () => {
 
 
         fetch(
-            "http://localhost:5000/addProduct",
+            "https://cam-r-server.vercel.app/addProduct",
             {
                 method: "POST",
                 headers: {

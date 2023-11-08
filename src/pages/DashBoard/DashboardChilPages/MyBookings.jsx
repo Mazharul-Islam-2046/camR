@@ -13,7 +13,7 @@ const MyBookings = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.uid}`)
+        fetch(`https://cam-r-server.vercel.app/users/${user?.uid}`)
             .then((res) => res.json())
             .then((data) => {
                 setids(data.bookedProducts)

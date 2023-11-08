@@ -33,7 +33,7 @@ const BasePage = () => {
     },[products])
 
     useEffect(() => {
-        fetch("http://localhost:5000/products/popular")
+        fetch("https://cam-r-server.vercel.app/products/popular")
             .then((res) => res.json())
             .then((data) => {
                 setPopularProduct(data)
