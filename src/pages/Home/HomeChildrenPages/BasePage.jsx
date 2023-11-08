@@ -41,7 +41,7 @@ const BasePage = () => {
     }, [])
     return (
         <>
-            <div className="grid grid-cols-2 px-16 mt-12 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
                 <div className="row-span-2 bg-black relative">
                     <img className="h-full object-cover opacity-60" src="https://i.shgcdn.com/e48d4bff-9e5d-4318-bff9-0a23a47c5830/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" />
 
@@ -101,7 +101,7 @@ const BasePage = () => {
 
 
             {/* Browse By Category */}
-            <div className="px-16 mt-44">
+            <div className="px-4 lg:px-16 mt-44">
                 <h3 className="text-4xl font-bold font-secondary">
                     Newly Added Products
                 </h3>
@@ -113,6 +113,7 @@ const BasePage = () => {
 
                 {/* Newly added Product Section */}
                 <div>
+                    <div className="hidden lg:block">
                     <Swiper
                         autoHeight={false}
                         spaceBetween={20}
@@ -124,16 +125,43 @@ const BasePage = () => {
                             newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
                         }
                     </Swiper>
+                    </div>
+                    <div className="lg:hidden md:hidden">
+                    <Swiper
+                        autoHeight={false}
+                        spaceBetween={20}
+                        slidesPerView={1.2}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                    >
+                        {
+                            newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                        }
+                    </Swiper>
+                    </div>
+                    <div className="hidden md:block lg:hidden">
+                    <Swiper
+                        autoHeight={false}
+                        spaceBetween={20}
+                        slidesPerView={2.5}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                    >
+                        {
+                            newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                        }
+                    </Swiper>
+                    </div>
                 </div>
             </div>
 
 
             {/* Propular Product Section */}
 
-            <div className=" mt-44 px-16">
+            <div className=" mt-44 px-4 md:px-16">
                 <h2 className="text-4xl font-bold font-secondary">Popular Products</h2>
                 <p className="font-medium font-primary mt-2 mb-10">This are the most hot products of this week!!</p>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-16">
                     {
                         popularProduct.map((product, idx) => <PopularProductCard key={idx} product={product}></PopularProductCard>)
                     }
@@ -144,9 +172,9 @@ const BasePage = () => {
 
             {/* All Products Section */}
 
-            <div className="mt-44 px-16 flex flex-col items-center">
+            <div className="mt-44 px-4 md:px-8 lg:px-16 flex flex-col items-center">
                 <h3 className="text-3xl font-bold mb-10 text-center font-secondary">All Products</h3>
-                <div className="grid grid-cols-3 gap-4 gap-y-20">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-20">
                     {
                         products.slice(0, 8).map((product, idx) => <AllProductsCards key={idx} product={product}></AllProductsCards>)
                     }

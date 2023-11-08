@@ -22,6 +22,17 @@ import Grips from './pages/Home/HomeChildrenPages/Grips';
 import Lenses from './pages/Home/HomeChildrenPages/Lenses';
 import Electrics from './pages/Home/HomeChildrenPages/Electrics';
 import Production from './pages/Home/HomeChildrenPages/Production';
+import Dashboard from './pages/DashBoard/Dashboard';
+import CameraProduct from './pages/AllProducts/AllProductsPages/CameraProduct';
+import AllProductscameraAccessories from './pages/AllProducts/AllProductsPages/AllProductscameraAccessories';
+import AllProductsDigital from './pages/AllProducts/AllProductsPages/AllProductsDigital';
+import AllProductsAudio from './pages/AllProducts/AllProductsPages/AllProductsAudio';
+import AllProductsLighting from './pages/AllProducts/AllProductsPages/AllProductsLighting';
+import AllProductsGrips from './pages/AllProducts/AllProductsPages/AllProductsGrips';
+import AllProductsLenses from './pages/AllProducts/AllProductsPages/AllProductsLenses';
+import AllProductsProduction from './pages/AllProducts/AllProductsPages/AllProductsProduction';
+import AllProductsElectrics from './pages/AllProducts/AllProductsPages/AllProductsElectrics';
+import AllProductsBase from './pages/AllProducts/AllProductsPages/AllProductsBase';
 
 
 const router = createBrowserRouter([
@@ -92,7 +103,55 @@ const router = createBrowserRouter([
       },
       {
         path: "/allproducts",
-        element: <AllProducts />
+        element: <AllProducts />,
+        children: [
+          {
+            path: "/allproducts/camera",
+            element: <CameraProduct/>
+          },
+          {
+            path: "/allproducts/camera_accessories",
+            element: <AllProductscameraAccessories/>
+          },
+          {
+            path: "/allproducts/digital",
+            element: <AllProductsDigital/>
+          
+          },
+          {
+            path: "/allproducts/audio",
+            element: <AllProductsAudio/>
+          },
+          {
+            path: "/allproducts/lighting",
+            element: <AllProductsLighting/>
+          },
+          {
+            path: "/allproducts/grips",
+            element: <AllProductsGrips/>
+          },
+          {
+            path: "/allproducts/lenses",
+            element:<AllProductsLenses/>
+          },
+          {
+            path: "/allproducts/Electrics",
+            element: <AllProductsElectrics/>
+          },
+          {
+            path: "/allproducts/production",
+            element: <AllProductsProduction/>
+          },
+          {
+            path: "/allproducts",
+            element: <AllProductsBase/>
+          }
+           
+        ]
+      },
+      {
+        path:"/dashboard",
+        element: <Dashboard/>
       }
     ]
   },

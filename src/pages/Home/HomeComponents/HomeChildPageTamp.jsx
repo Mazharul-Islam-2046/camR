@@ -56,7 +56,7 @@ const HomeChildPageTemp = ({ category }) => {
 
                 products.length ?
                     <div>
-                        <div className="grid grid-cols-2 px-16 mt-12 gap-5">
+                        <div className="grid grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
                             <div className="row-span-2 bg-black relative">
                                 <img className="h-full object-cover opacity-60" src="https://i.shgcdn.com/e48d4bff-9e5d-4318-bff9-0a23a47c5830/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" />
 

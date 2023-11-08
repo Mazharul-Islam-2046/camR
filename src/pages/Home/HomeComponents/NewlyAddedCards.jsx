@@ -22,11 +22,11 @@ const NewlyAddedCards = ({ product }) => {
     return (
         <div className='flex flex-col h-96 shadow-xl'>
             <img className='h-48 w-full object-cover mb-4' src={product_image} alt={product_name} />
-            <div className='grow pl-4'>
+            <div className='grow pl-2 md:pl-4'>
                 <h3 className='text-xl font-primary font-bold'>{product_name}</h3>
-                <p>{description.slice(0, 120)}...</p>
+                <p>{description.slice(0, 80)}...</p>
             </div>
-            <div className='pl-4'>
+            <div className='pl-4 mb-3'>
                 <Link className='py-1 pr-2'>Details</Link>
             </div>
         </div>
