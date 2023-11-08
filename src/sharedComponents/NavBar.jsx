@@ -102,8 +102,8 @@ const NavBar = () => {
           </div>
           {/* Menus */}
           <div className="flex items-center gap-5 font-primary">
-            <NavLink className="" to="/">Home</NavLink>
-            <NavLink className="" to="/services">Services</NavLink>
+            <NavLink className="hidden lg:flex" to="/">Home</NavLink>
+            <NavLink className="hidden lg:flex" to="/services">Services</NavLink>
           </div>
         </div>
 
@@ -126,8 +126,8 @@ const NavBar = () => {
             </div>
             {/* Menus */}
             <div className="flex items-center gap-5 font-primary">
-              <NavLink className="" to="/">Home</NavLink>
-              <NavLink className="" to="/services">Services</NavLink>
+              <NavLink className="hidden lg:flex" to="/">Home</NavLink>
+              <NavLink className="hidden lg:flex" to="/allproducts">All Products</NavLink>
             </div>
           </div>
 
@@ -147,8 +147,8 @@ const NavBar = () => {
                 className='bla bla bla'
               >
                 <div className="text-black flex flex-col py-6 px-3">
-                  <Link to='/' className="border-b-2 py-3">Home</Link>
-                  <Link to='/allproducts' className="border-b-2 py-3">All Products</Link>
+                  <Link to='/' className="border-b-2 lg:hidden py-3">Home</Link>
+                  <Link to='/allproducts' className="border-b-2 lg:hidden py-3">All Products</Link>
                   <Link to='/dashboard' className="border-b-2 py-3">Dashboard</Link>
                   <Link to='/addproduct' className="border-b-2 py-3">Add Product</Link>
                   <button onClick={handleLogOut} className="border-b-2 py-3">LogOut</button>

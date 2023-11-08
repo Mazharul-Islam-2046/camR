@@ -17,7 +17,16 @@ const DashboardProductCard = ({ product }) => {
     } = product
 
 
-    console.log(_id);
+    // console.log(_id);
+
+    const handleWithDraw = () => {
+        fetch(`https://cam-r-server.vercel.app/products/id/${_id}`, {
+            method: "DELETE",
+        })
+
+
+
+    }
 
 
 
@@ -37,10 +46,10 @@ const DashboardProductCard = ({ product }) => {
                     <p>Location: {product?.location}</p>
                     <div className="flex justify-between pr-12 items-center">
                         <p>${price_per_day}/Day</p>
-                    <div className='flex gap-1'>
-                    <button className="py-1 border-2 border-white px-2">WithDraw</button>
-                    <Link to={`edit/${_id}`} className="py-1 border-2 border-white px-2">Edit</Link>
-                    </div>
+                        <div className='flex gap-1'>
+                            <button onClick={handleWithDraw} className="py-1 border-2 border-white px-2">WithDraw</button>
+                            <Link to={`edit/${_id}`} className="py-1 border-2 border-white px-2">Edit</Link>
+                        </div>
                     </div>
                 </div>
             </div>

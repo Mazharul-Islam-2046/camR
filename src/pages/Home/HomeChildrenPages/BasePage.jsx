@@ -43,16 +43,16 @@ const BasePage = () => {
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
                 <div className="row-span-2 bg-black relative">
-                    <img className="h-full object-cover opacity-60" src="https://i.shgcdn.com/e48d4bff-9e5d-4318-bff9-0a23a47c5830/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" />
+                    <img className="h-full object-cover opacity-60" src={newProducts[0].product_image} alt="" />
 
                     <div className="absolute flex flex-col justify-center items-center top-0 w-full h-full">
-                        <h2 className="text-white text-5xl font-bold">
+                        <h2 className="text-white text-xl lg:text-5xl font-bold">
                             Recently Added
                         </h2>
-                        <h2 className="text-white text-2xl font-semibold mt-8 mb-2">
+                        <h2 className="text-white text-sm lg:text-2xl font-semibold mt-3 lg:mt-8 mb-1 lg:mb-2">
                             Red Komodo
                         </h2>
-                        <p className="text-white text-sm text-center mb-8">
+                        <p className="text-white text-xs lg:text-sm text-center mb-4 lg:mb-8">
                             Compact Cinema Camera Featuring RED’S <br /> Unparalleled Image Quality, Color Science, And <br /> Groundbreaking Global Shutter Sensor Technology
                         </p>
                         <button className="text-white py-1 px-4 border-2 border-white">
@@ -179,7 +179,7 @@ const BasePage = () => {
                         products.slice(0, 8).map((product, idx) => <AllProductsCards key={idx} product={product}></AllProductsCards>)
                     }
                 </div>
-                <button className="mt-20 py-2 px-5 border-2 border-black w-1/6 hover:bg-black hover:text-white">
+                <button className="mt-20 py-2 px-5 border-2 border-black lg:w-1/6 w-1/2 hover:bg-black hover:text-white">
                     <NavLink to="/allProducts">See All Products</NavLink>
                 </button>
             </div>

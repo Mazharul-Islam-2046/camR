@@ -14,7 +14,7 @@ const MyListedProducts = () => {
             .then((data) => {
                 setProducts(data)
             })
-    }, [user?.uid])
+    }, [user?.uid, products])
 
 
 
