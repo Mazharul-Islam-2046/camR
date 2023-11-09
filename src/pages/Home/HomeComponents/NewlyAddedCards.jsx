@@ -17,7 +17,8 @@ const NewlyAddedCards = ({ product }) => {
         provider_name,
         provider_image,
         price_per_day,
-        description
+        description,
+        _id
     } = product
     return (
         <div className='flex flex-col h-96 shadow-xl'>
@@ -27,7 +28,7 @@ const NewlyAddedCards = ({ product }) => {
                 <p>{description.slice(0, 80)}...</p>
             </div>
             <div className='pl-4 mb-3'>
-                <Link className='py-1 pr-2'>Details</Link>
+                <Link to={`/allproducts/details/${_id}`} className='py-1 pr-2'>Details</Link>
             </div>
         </div>
     );

@@ -11,7 +11,8 @@ const AllProductsCards = ({product}) => {
         provider_name,
         provider_image,
         price_per_day,
-        description
+        description,
+        _id
     } = product
     return (
         <div className="space-y-3 font-primary">
@@ -26,7 +27,7 @@ const AllProductsCards = ({product}) => {
                 <div className="flex justify-between">
                 <p className="py-1 px-3 bg-black text-white">Price: {price_per_day}$ / day</p>
                 <button className="px-3 py-1 border-b-2 hover:border-black">
-                    <NavLink>Details</NavLink>
+                    <NavLink to={`/allproducts/details/${_id}`}>Details</NavLink>
                 </button>
                 </div>
             </div>

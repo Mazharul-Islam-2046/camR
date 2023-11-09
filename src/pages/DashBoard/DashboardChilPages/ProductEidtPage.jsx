@@ -27,6 +27,7 @@ const ProductEidtPage = () => {
 
 
     const handleEdit = (e) => {
+      e.preventDefault()
         const productData = {
             category: e.target.category.value.toLowerCase(),
             product_name: e.target.productsName.value,
@@ -51,7 +52,7 @@ const ProductEidtPage = () => {
             }
           ).then((res) => res.json())
           .then((data) => {
-            data && Swal.fire('Successfully Loged In')
+            data && Swal.fire('Successfully Updated ')
           })
         
         

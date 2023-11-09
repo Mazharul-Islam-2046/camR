@@ -50,13 +50,13 @@ const BasePage = () => {
                             Recently Added
                         </h2>
                         <h2 className="text-white text-sm lg:text-2xl font-semibold mt-3 lg:mt-8 mb-1 lg:mb-2">
-                            Red Komodo
+                            {newProducts[0?.product_name]}
                         </h2>
                         <p className="text-white text-xs lg:text-sm text-center mb-4 lg:mb-8">
-                            Compact Cinema Camera Featuring RED’S <br /> Unparalleled Image Quality, Color Science, And <br /> Groundbreaking Global Shutter Sensor Technology
+                            {newProducts[0]?.description}
                         </p>
                         <button className="text-white py-1 px-4 border-2 border-white">
-                            <NavLink>Rent Now</NavLink>
+                            <NavLink to={`/allproducts/details/${newProducts[0]?._id}`}>Rent Now</NavLink>
                         </button>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const BasePage = () => {
                     <p className="mb-7 mt-1">List your gears for sharing and earn money</p>
 
                     <button className="py-2 w-2/5 border-2 border-white">
-                        <NavLink>SignUp</NavLink>
+                        <NavLink to={`/register`}>SignUp</NavLink>
                     </button>
 
                 </div>

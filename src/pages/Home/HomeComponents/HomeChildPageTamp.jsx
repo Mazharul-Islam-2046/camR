@@ -20,6 +20,9 @@ const HomeChildPageTemp = ({ category }) => {
     const [popularProduct, setPopularProduct] = useState([])
     const [newProducts, setNewProducts] = useState([])
 
+
+    
+
     useEffect(() => {
         fetch(`https://cam-r-server.vercel.app/products/${category}/popular`)
             .then((res) => res.json())
@@ -56,22 +59,22 @@ const HomeChildPageTemp = ({ category }) => {
 
                 products?.length ?
                     <div>
-                        <div className="grid grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
                             <div className="row-span-2 bg-black relative">
-                                <img className="h-full object-cover opacity-60" src="https://i.shgcdn.com/e48d4bff-9e5d-4318-bff9-0a23a47c5830/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" />
+                                <img className="h-full object-cover opacity-60" src={newProducts[0].product_image} alt="" />
 
                                 <div className="absolute flex flex-col justify-center items-center top-0 w-full h-full">
                                     <h2 className="text-white text-5xl font-bold">
                                         Recently Added
                                     </h2>
                                     <h2 className="text-white text-2xl font-semibold mt-8 mb-2">
-                                        Red Komodo
+                                        {newProducts[0]?.product_name}
                                     </h2>
                                     <p className="text-white text-sm text-center mb-8">
-                                        Compact Cinema Camera Featuring RED’S <br /> Unparalleled Image Quality, Color Science, And <br /> Groundbreaking Global Shutter Sensor Technology
+                                        {newProducts[0]?.description}
                                     </p>
                                     <button className="text-white py-1 px-4 border-2 border-white">
-                                        <NavLink>Rent Now</NavLink>
+                                        <NavLink to={`/allproducts/details/${newProducts[0]?._id}`}>Rent Now</NavLink>
                                     </button>
                                 </div>
                             </div>
@@ -106,16 +109,15 @@ const HomeChildPageTemp = ({ category }) => {
 
                                 <p className="mb-7 mt-1">List your gears for sharing and earn money</p>
 
-                                <button className="py-2 w-2/5 border-2 border-white">
-                                    <NavLink>SignUp</NavLink>
-                                </button>
+                                
+                                    <NavLink className="py-2 px-6 w-2/5 border-2 border-white" to="/register">SignUp</NavLink>
 
                             </div>
                         </div>
 
 
                         {/* Browse By Category */}
-                        <div className="px-16 mt-44">
+                        <div className="px-4 lg:px-16 mt-44">
                             <h3 className="text-4xl font-bold font-secondary">
                                 Newly Added Products
                             </h3>
@@ -127,6 +129,7 @@ const HomeChildPageTemp = ({ category }) => {
 
                             {/* Newly added Product Section */}
                             <div>
+                                <div className="hidden lg:block">
                                 <Swiper
                                     autoHeight={false}
                                     spaceBetween={20}
@@ -138,16 +141,43 @@ const HomeChildPageTemp = ({ category }) => {
                                         newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
                                     }
                                 </Swiper>
+                                </div>
+                                <div className="lg:hidden md:hidden">
+                                <Swiper
+                                    autoHeight={false}
+                                    spaceBetween={20}
+                                    slidesPerView={1.2}
+                                    onSlideChange={() => console.log('slide change')}
+                                    onSwiper={(swiper) => console.log(swiper)}
+                                >
+                                    {
+                                        newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                                    }
+                                </Swiper>
+                                </div>
+                                <div className="hidden md:block lg:hidden">
+                                <Swiper
+                                    autoHeight={false}
+                                    spaceBetween={20}
+                                    slidesPerView={2.5}
+                                    onSlideChange={() => console.log('slide change')}
+                                    onSwiper={(swiper) => console.log(swiper)}
+                                >
+                                    {
+                                        newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                                    }
+                                </Swiper>
+                                </div>
                             </div>
                         </div>
 
 
                         {/* Propular Product Section */}
                         { popularProduct.length ?            
-                        <div className=" mt-44 px-16">
+                        <div className=" mt-44 px-4 md:px-16">
                             <h2 className="text-4xl font-bold font-secondary">Popular Products</h2>
                             <p className="font-medium font-primary mt-2 mb-10">This are the most hot products of this week!!</p>
-                            <div className="grid grid-cols-2 gap-x-6 gap-y-16">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-16">
                                 {
                                     popularProduct.map((product, idx) => <PopularProductCard key={idx} product={product}></PopularProductCard>)
                                 }
@@ -162,14 +192,14 @@ const HomeChildPageTemp = ({ category }) => {
 
                         {/* All Products Section */}
 
-                        <div className="mt-44 px-16 flex flex-col items-center">
+                        <div className="mt-44 px-4 md:px-8 lg:px-16 flex flex-col items-center">
                             <h3 className="text-3xl font-bold mb-10 text-center font-secondary">All Products</h3>
-                            <div className="grid grid-cols-3 gap-4 gap-y-20">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 gap-y-20">
                                 {
                                     products.slice(0, 8).map((product, idx) => <AllProductsCards key={idx} product={product}></AllProductsCards>)
                                 }
                             </div>
-                            <button className="mt-20 py-2 px-5 border-2 border-black w-1/6 hover:bg-black hover:text-white">
+                            <button className="mt-20 py-2 px-5 border-2 border-black lg:w-1/6 w-1/2 hover:bg-black hover:text-white">
                                 <NavLink to="/allProducts">See All Products</NavLink>
                             </button>
                         </div>
