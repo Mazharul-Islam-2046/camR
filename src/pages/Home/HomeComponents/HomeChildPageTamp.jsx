@@ -54,7 +54,7 @@ const HomeChildPageTemp = ({ category }) => {
 
             {
 
-                products.length ?
+                products?.length ?
                     <div>
                         <div className="grid grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
                             <div className="row-span-2 bg-black relative">

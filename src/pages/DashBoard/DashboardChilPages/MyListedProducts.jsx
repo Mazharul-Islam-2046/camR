@@ -23,7 +23,7 @@ const MyListedProducts = () => {
 
 
             {
-                products.length <= 0 ?
+                products?.length <= 0 ?
 
 
                     <h3 className="text-3xl font-secondary font-semibold text-white">No Product Found</h3>

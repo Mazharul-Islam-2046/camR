@@ -43,7 +43,7 @@ const BasePage = () => {
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
                 <div className="row-span-2 bg-black relative">
-                    <img className="h-full object-cover opacity-60" src={newProducts[0].product_image} alt="" />
+                    <img className="h-full object-cover opacity-60" src={newProducts[0]?.product_image} alt="" />
 
                     <div className="absolute flex flex-col justify-center items-center top-0 w-full h-full">
                         <h2 className="text-white text-xl lg:text-5xl font-bold">

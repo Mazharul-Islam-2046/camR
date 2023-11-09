@@ -16,6 +16,7 @@ const AllProductsCard = ({ product }) => {
     } = product
 
 
+
     return (
         <div>
             <div className="flex text-white font-primary gap-6" >
@@ -30,7 +31,7 @@ const AllProductsCard = ({ product }) => {
                     <p>Location: {product?.location}</p>
                     <div className="flex justify-between pr-12 items-center">
                         <p>${price_per_day}/Day</p>
-                    <Link to={`/deatails/:${_id}`} className="py-1 border-2 border-white px-2">Details</Link>
+                    <Link to={`/allproducts/details/${_id}`} className="py-1 border-2 border-white px-2">Details</Link>
                     </div>
                 </div>
             </div>

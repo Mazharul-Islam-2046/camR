@@ -38,6 +38,7 @@ import AddProducts from './pages/DashBoard/DashboardChilPages/AddProducts';
 import MyListedProducts from './pages/DashBoard/DashboardChilPages/MyListedProducts';
 import ProductEidtPage from './pages/DashBoard/DashboardChilPages/ProductEidtPage';
 import PrivateRoutes from './Providers/PrivateRoutes';
+import DetailPage from './pages/AllProducts/AllProductsPages/DetailPage/DetailPage';
 
 
 const router = createBrowserRouter([
@@ -150,6 +151,11 @@ const router = createBrowserRouter([
           {
             path: "/allproducts",
             element: <AllProductsBase/>
+          },
+          {
+            path: "/allproducts/details/:id",
+            element: <DetailPage/>,
+            loader: ({params}) => fetch(`http://localhost:5000/products/ids/${params.id}`)
           }
            
         ]

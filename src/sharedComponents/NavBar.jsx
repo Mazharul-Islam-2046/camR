@@ -150,7 +150,7 @@ const NavBar = () => {
                   <Link to='/' className="border-b-2 lg:hidden py-3">Home</Link>
                   <Link to='/allproducts' className="border-b-2 lg:hidden py-3">All Products</Link>
                   <Link to='/dashboard' className="border-b-2 py-3">Dashboard</Link>
-                  <Link to='/addproduct' className="border-b-2 py-3">Add Product</Link>
+                  <Link to='/dashboard/addproducts' className="border-b-2 py-3">Add Product</Link>
                   <button onClick={handleLogOut} className="border-b-2 py-3">LogOut</button>
                 </div>
               </Drawer>

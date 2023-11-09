@@ -28,7 +28,7 @@ const MyBookings = () => {
 
 
             {
-                ids.length <= 0 ?
+                ids?.length <= 0 ?
 
 
                     <h3 className="text-3xl font-secondary font-semibold text-white">No Product Found</h3>
@@ -40,7 +40,7 @@ const MyBookings = () => {
 
                     <div>
                         {
-                            ids.map((id, idx) =>
+                            ids?.map((id, idx) =>
                                 <MyBookingsCard key={idx} id={id}></MyBookingsCard>
                             )
                         }

@@ -28,7 +28,8 @@ const AllProductsDisplayPageTepm = ({ category }) => {
         // products.map(product => console.log(product.product_name.toUpperCase()))
 
         const filteredProducts = products.filter((product) => {
-           return product.product_name.toUpperCase().includes(searchValue);}
+            return product.product_name.toUpperCase().includes(searchValue);
+        }
         )
 
         console.log(filteredProducts, searchValue);
@@ -51,7 +52,7 @@ const AllProductsDisplayPageTepm = ({ category }) => {
 
             <input onChange={handleSearch} className="placeholder:font-primary outline-none bg-transparent border-b-2 border-white text-white px-2 py-2 w-full mb-16" placeholder="Search" name="search" type="text" />
             {
-                products.length <= 0 ?
+                products?.length <= 0 ?
 
 
                     <h3 className="text-3xl font-secondary font-semibold text-white">No Product Found</h3>
