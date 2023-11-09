@@ -18,7 +18,7 @@ const Register = () => {
   const handleRegistration = (e) => {
     e.preventDefault();
     const form = e.target;
-    const email = form.email.value;
+    const email = form.email.value.toLowerCase();
     const password = form.password.value;
     const photo = form.photoUrl.value;
     const name = form.name.value;

@@ -24,7 +24,6 @@ const Login = () => {
           email: result.user.email,
           photo: result.user.photoURL,
           uid: result.user.uid,
-          bookedProducts: []
 
         }
 
@@ -91,8 +90,27 @@ const Login = () => {
     signIn(email, password)
       .then(result => {
         setPhoto(result.user.photoURL);
-        Swal.fire('Successfully Loged In')
-        result && navigate(location?.state ? location.state : '/');
+        const userData = {
+          email: result.user.email,
+          uid: result.user.uid,
+
+        }
+
+        fetch(
+          "https://cam-r-server.vercel.app/users",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+          }
+        )
+        .then((res) => res.json())
+        .then((data) => {
+          data && Swal.fire('Successfully Loged In')
+          navigate(location?.state ? location.state : '/')
+        })
       })
       .catch(error => {
         Swal.fire({
