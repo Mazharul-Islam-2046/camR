@@ -32,7 +32,7 @@ const Dashboard = () => {
 
 
         {/* Display Section */}
-        <div className="w-3/4 bg-black flex justify-center items-center">
+        <div className="w-3/4 bg-black py-8 flex justify-center items-center">
             <Outlet/>
         </div>
     </div>

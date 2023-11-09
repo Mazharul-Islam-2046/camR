@@ -155,7 +155,7 @@ const router = createBrowserRouter([
           {
             path: "/allproducts/details/:id",
             element: <DetailPage/>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/ids/${params.id}`)
+            loader: ({params}) => fetch(`https://cam-r-server.vercel.app/products/ids/${params.id}`)
           }
            
         ]

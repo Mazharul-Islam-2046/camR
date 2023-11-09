@@ -41,7 +41,7 @@ const MyBookings = () => {
                     <div>
                         {
                             ids?.map((id, idx) =>
-                                <MyBookingsCard key={idx} id={id}></MyBookingsCard>
+                                <MyBookingsCard key={idx} setids={setids} id={id}></MyBookingsCard>
                             )
                         }
                     </div>

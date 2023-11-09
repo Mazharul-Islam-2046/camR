@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const DashboardProductCard = ({ product }) => {
+const DashboardProductCard = ({ product, handleRefresh }) => {
 
 
 
@@ -22,6 +22,10 @@ const DashboardProductCard = ({ product }) => {
     const handleWithDraw = () => {
         fetch(`https://cam-r-server.vercel.app/products/id/${_id}`, {
             method: "DELETE",
+        })
+        .then((res)=> res.json)
+        .then((data)=> {
+            data && handleRefresh(_id)
         })
 
 
@@ -59,7 +63,8 @@ const DashboardProductCard = ({ product }) => {
 
 
 DashboardProductCard.propTypes = {
-    product: PropTypes.object
+    product: PropTypes.object,
+    handleRefresh: PropTypes.func
 };
 
 export default DashboardProductCard;

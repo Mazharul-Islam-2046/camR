@@ -17,6 +17,12 @@ const MyListedProducts = () => {
     }, [user?.uid, products])
 
 
+    const handleRefresh = (id) => {
+        const refreshedProducts = products.filter(product=> product._id !== id)
+        setProducts(refreshedProducts)
+    }
+
+
 
     return (
         <div className="overflow-y-auto py-1 space-y-10 px-7 h-[100vh]">
@@ -36,7 +42,7 @@ const MyListedProducts = () => {
                     <div>
                         {
                             products.map((product, idx) =>
-                                <DashboardProductCard key={idx} product={product}></DashboardProductCard>
+                                <DashboardProductCard key={idx} product={product} handleRefresh={handleRefresh}></DashboardProductCard>
                             )
                         }
                     </div>

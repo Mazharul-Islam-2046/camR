@@ -1,10 +1,12 @@
 
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
-const MyBookingsCard = ({id}) => {
+const MyBookingsCard = ({ id, setids }) => {
 
     const [product, setProduct] = useState({})
 
@@ -30,6 +32,60 @@ const MyBookingsCard = ({id}) => {
 
 
 
+    const { user } = useContext(AuthContext)
+
+    const [oldBookedIds, setOldIds] = useState([])
+
+    useEffect(() => {
+        const uid = user?.uid
+        console.log(uid);
+        fetch(`https://cam-r-server.vercel.app/users/${uid}`)
+            .then((res) => res.json())
+            .then((data) => {
+                data.bookedProducts ? setOldIds(data.bookedProducts) : setOldIds([])
+            })
+    }, [user])
+
+
+
+    const handleCancel = () => {
+        const bookedIDs = oldBookedIds.filter(id => id !== _id)
+        const newInfo = {
+
+            email: user?.email,
+            bookedIDs
+        }
+
+
+
+        fetch(
+            "https://cam-r-server.vercel.app/users/bookings",
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newInfo),
+            }
+        ).then((res) => res.json())
+            .then((data) => {
+                data && Swal.fire('Successfully Canceled')
+                setids(bookedIDs)
+            })
+
+
+            .catch(error => {
+                error && Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error.code,
+                })
+            })
+    }
+
+
+
+
     return (
         <div>
             <div className="flex text-white font-primary gap-6" >
@@ -44,7 +100,10 @@ const MyBookingsCard = ({id}) => {
                     <p>Location: {product?.location}</p>
                     <div className="flex justify-between pr-12 items-center">
                         <p>${price_per_day}/Day</p>
-                    <Link to={`/deatails/:${_id}`} className="py-1 border-2 border-white px-2">Details</Link>
+                        <div className='flex gap-3'>
+                            <Link to={`/allproducts/details/${_id}`} className="py-1 border-2 border-white px-2">Details</Link>
+                            <button onClick={handleCancel} className="py-1 border-2 border-white px-2">Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,6 +111,7 @@ const MyBookingsCard = ({id}) => {
     );
 };
 MyBookingsCard.propTypes = {
-    id: PropTypes.string
+    id: PropTypes.string,
+    setids: PropTypes.func
 };
 export default MyBookingsCard;
