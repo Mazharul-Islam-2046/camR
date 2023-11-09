@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { useState } from "react";
 import MyBookingsCard from "../DashboardComponents/MyBookingsCard";
+import { Helmet } from "react-helmet";
 
 
 const MyBookings = () => {
@@ -29,7 +30,10 @@ const MyBookings = () => {
 
     return (
         <div className="overflow-y-auto py-1 space-y-10 px-7 h-[100vh]">
-
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>CamR || My Bookings</title>
+            </Helmet>
 
             {
                 ids?.length <= 0 ?

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 
@@ -36,10 +37,10 @@ const AddProducts = () => {
                 body: JSON.stringify(productData),
             }
         )
-        .then((res) => res.json())
-        .then((data)=> {
-            data && Swal.fire("Product Added Succesfully");
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                data && Swal.fire("Product Added Succesfully");
+            })
     }
 
 
@@ -47,6 +48,10 @@ const AddProducts = () => {
 
     return (
         <div className="w-full">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>CamR || Add Product</title>
+            </Helmet>
             <h3 className="text-white font-primary text-xl font-semibold bg-gray-600 border-b-2 border-white mb-2 py-6 text-center">Add Product</h3>
             <form onSubmit={handleForm} className="flex flex-col w-full gap-2 text-white bg-transparent" action="">
                 <input className="bg-gray-600 rounded-sm placeholder:font-semibold outline-none text-white border-b-2 border-white py-4 pl-4" placeholder="Image Url" name="ProductImg" type="text" />

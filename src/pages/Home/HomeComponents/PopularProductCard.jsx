@@ -18,7 +18,7 @@ const PopularProductCard = ({product}) => {
             <img className="h-80 object-cover w-full" src={product_image} alt={product_name} />
             <div className="pl-3 flex flex-col">
                 <div className="flex gap-3 items-center mb-2">
-                    <img className="w-10 h-10 rounded-full object-cover" src="https://static.bhphotovideo.com/explora/sites/default/files/red_komodo-lifestyle_feat_a_feat.jpg" alt="" />
+                    <img className="w-10 h-10 rounded-full object-cover" src={provider_image} alt="" />
                     <p className="text-xl font-medium">{provider_name}</p>
                 </div>
                 <h3 className="text-2xl font-bold mb-1">{product_name}</h3>

@@ -1,6 +1,7 @@
-import{ useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import DashboardProductCard from '../DashboardComponents/DashboardProductCard';
+import { Helmet } from 'react-helmet';
 
 const MyListedProducts = () => {
 
@@ -18,7 +19,7 @@ const MyListedProducts = () => {
 
 
     const handleRefresh = (id) => {
-        const refreshedProducts = products.filter(product=> product._id !== id)
+        const refreshedProducts = products.filter(product => product._id !== id)
         setProducts(refreshedProducts)
     }
 
@@ -26,7 +27,10 @@ const MyListedProducts = () => {
 
     return (
         <div className="overflow-y-auto py-1 space-y-10 px-7 h-[100vh]">
-
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>CamR || My Listed Products</title>
+            </Helmet>
 
             {
                 products?.length <= 0 ?

@@ -1,7 +1,7 @@
 import { AiFillDollarCircle } from "react-icons/ai";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { BsFillShieldLockFill } from "react-icons/bs";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NewlyAddedCards from "../HomeComponents/NewlyAddedCards";
 import AllProductsCards from "../HomeComponents/AllProductsCards";
 import PopularProductCard from "../HomeComponents/PopularProductCard";
@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const BasePage = () => {
 
@@ -22,15 +23,15 @@ const BasePage = () => {
 
     useEffect(() => {
         const length = products.length
-                if (length > 7) {
+        if (length > 7) {
 
-                    const newProductAmount = length - 6
-                    setNewProducts(products.slice(newProductAmount, length))
-                }
-                else{
-                    setNewProducts(products)
-                }
-    },[products])
+            const newProductAmount = length - 6
+            setNewProducts(products.slice(newProductAmount, length))
+        }
+        else {
+            setNewProducts(products)
+        }
+    }, [products])
 
     useEffect(() => {
         fetch("https://cam-r-server.vercel.app/products/popular")
@@ -40,7 +41,10 @@ const BasePage = () => {
             })
     }, [])
     return (
-        <>
+        <><Helmet>
+            <meta charSet="utf-8" />
+            <title>CamR || Home</title>
+        </Helmet>
             <div className="grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-16 mt-12 gap-5">
                 <div className="row-span-2 bg-black relative">
                     <img className="h-full object-cover opacity-60" src={newProducts[0]?.product_image} alt="" />
@@ -114,43 +118,43 @@ const BasePage = () => {
                 {/* Newly added Product Section */}
                 <div>
                     <div className="hidden lg:block">
-                    <Swiper
-                        autoHeight={false}
-                        spaceBetween={20}
-                        slidesPerView={3.5}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                    >
-                        {
-                            newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
-                        }
-                    </Swiper>
+                        <Swiper
+                            autoHeight={false}
+                            spaceBetween={20}
+                            slidesPerView={3.5}
+                            onSlideChange={() => console.log('slide change')}
+                            onSwiper={(swiper) => console.log(swiper)}
+                        >
+                            {
+                                newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                            }
+                        </Swiper>
                     </div>
                     <div className="lg:hidden md:hidden">
-                    <Swiper
-                        autoHeight={false}
-                        spaceBetween={20}
-                        slidesPerView={1.2}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                    >
-                        {
-                            newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
-                        }
-                    </Swiper>
+                        <Swiper
+                            autoHeight={false}
+                            spaceBetween={20}
+                            slidesPerView={1.2}
+                            onSlideChange={() => console.log('slide change')}
+                            onSwiper={(swiper) => console.log(swiper)}
+                        >
+                            {
+                                newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                            }
+                        </Swiper>
                     </div>
                     <div className="hidden md:block lg:hidden">
-                    <Swiper
-                        autoHeight={false}
-                        spaceBetween={20}
-                        slidesPerView={2.5}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                    >
-                        {
-                            newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
-                        }
-                    </Swiper>
+                        <Swiper
+                            autoHeight={false}
+                            spaceBetween={20}
+                            slidesPerView={2.5}
+                            onSlideChange={() => console.log('slide change')}
+                            onSwiper={(swiper) => console.log(swiper)}
+                        >
+                            {
+                                newProducts.map((product, idx) => <SwiperSlide key={idx}><NewlyAddedCards product={product}></NewlyAddedCards></SwiperSlide>)
+                            }
+                        </Swiper>
                     </div>
                 </div>
             </div>

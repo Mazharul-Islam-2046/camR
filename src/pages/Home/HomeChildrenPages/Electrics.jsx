@@ -1,9 +1,14 @@
+import { Helmet } from "react-helmet";
 import HomeChildPageTemp from "../HomeComponents/HomeChildPageTamp";
 
 const Electrics = () => {
     return (
         <div>
-            <HomeChildPageTemp category="Electrics"></HomeChildPageTemp>            
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>CamR || Electrics</title>
+            </Helmet>
+            <HomeChildPageTemp category="Electrics"></HomeChildPageTemp>
         </div>
     );
 };
