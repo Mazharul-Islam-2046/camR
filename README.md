@@ -1,9 +1,21 @@
-#My Camera Renting Service website 
-Features:-
-1.You can take services
-2.You can add you services,
-3. You can Edit your services,
-4. You can search services by name,
-5. Login system has been added
+# CamR
 
-#Live Link:- https://camr-e98af.web.app/
+[Live Link](https://camr-e98af.web.app/)
+
+</br>
+<p>It's an website to Rent you Camera Accessories</p>
+</br>
+</br>
+
+
+
+
+## 🎆Features of This Web App
+</br>
+
+<ul>
+  <li>You can add services</li>
+  <li>You can take services</li>
+  <li>You can edit your services</li>
+  <li>Login Systum has been implemented</li>
+</ul>
