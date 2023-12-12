@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Hearder from "./HomeComponents/Hearder";
 import MenuBar from "./HomeComponents/MenuBar/MenuBar";
 import { useEffect, useState } from "react";
+import ContactUs from "./HomeComponents/ContactUs";
 
 
 
@@ -30,6 +31,7 @@ const Home = () => {
                 path !== "/add" && <MenuBar />
             }
             <Outlet />
+            <ContactUs/>
         </div>
     );
 };
